@@ -18,7 +18,8 @@
     <!-- Google Fonts (Vazirmatn for Persian) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
@@ -221,8 +222,7 @@
                             <h3 class="text-xl font-semibold mb-2">باشگاه والیبال سالنی قوچان</h3>
                             <p class="text-gray-600 mb-4 flex-grow">فضایی پویا برای علاقه‌مندان به والیبال در تمام سطوح.
                             </p>
-                            <button 
-                                data-club-name="باشگاه والیبال سالنی قوچان"
+                            <button data-club-name="باشگاه والیبال سالنی قوچان"
                                 class="open-reservation-modal-btn w-full mt-auto text-white font-semibold py-2 px-4 rounded-lg transition-colors bg-gray-500/40"
                                 disabled="disabled" readonly="readonly">رزرو سانس</button>
                         </div>
@@ -238,10 +238,9 @@
                             <h3 class="text-xl font-semibold mb-2">باشگاه فوتبال سالنی قوچان</h3>
                             <p class="text-gray-600 mb-4 flex-grow">زمین‌های استاندارد، مربیان مجرب، تجربه‌ای
                                 هیجان‌انگیز.</p>
-                            <button 
-                                data-club-name="باشگاه فوتبال سالنی قوچان"
+                            <button data-club-name="باشگاه فوتبال سالنی قوچان"
                                 class="open-reservation-modal-btn w-full mt-auto text-white font-semibold py-2 px-4 rounded-lg transition-colors bg-gray-500/40"
-                                disabled="disabled" readonly="readonly">رزرو سانس</button>                                
+                                disabled="disabled" readonly="readonly">رزرو سانس</button>
                         </div>
                     </div>
                 </div>
@@ -257,8 +256,7 @@
                         نمی‌دانید از کجا شروع کنید؟ به کمک هوش مصنوعی Gemini، یک برنامه تمرینی شخصی‌سازی‌شده بر اساس
                         اهداف و علاقه خود دریافت کنید و اولین قدم را برای رسیدن به تناسب اندام بردارید.
                     </p>
-                    <button 
-                    id="open-modal-btn"
+                    <button id="open-modal-btn"
                         class="bg-green-500 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-green-600 transition-transform transform hover:scale-105 inline-flex items-center">
                         ✨ ساخت برنامه تمرینی شخصی
                     </button>
@@ -310,27 +308,59 @@
                     </div>
                     <!-- Contact Form -->
                     <div class="bg-white p-8 rounded-lg shadow-md">
-                        <form action="#">
-                            <div class="mb-4">
-                                <label for="name" class="block text-gray-700 font-semibold mb-2">نام شما</label>
-                                <input type="text" id="name" name="name"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <!-- فرم تماس -->
+                        <div id="contact-form-container">
+                            <form id="contact-form">
+                                <div class="mb-4">
+                                    <label for="name" class="block text-gray-700 font-semibold mb-2">نام شما</label>
+                                    <input type="text" id="name" name="name"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="email" class="block text-gray-700 font-semibold mb-2">ایمیل</label>
+                                    <input type="email" id="email" name="email"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="message" class="block text-gray-700 font-semibold mb-2">پیام شما</label>
+                                    <textarea id="message" name="message" rows="4"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                                </div>
+                                <button type="submit" id="contact-submit-btn"
+                                    class="w-full bg-green-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 transition-colors">
+                                    ارسال پیام
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- باکس موفقیت -->
+                        <div id="contact-success-box" class="hidden text-center py-6">
+                            <div
+                                class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="check" class="w-10 h-10"></i>
                             </div>
-                            <div class="mb-4">
-                                <label for="email" class="block text-gray-700 font-semibold mb-2">ایمیل</label>
-                                <input type="email" id="email" name="email"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <h3 class="text-2xl font-bold mb-2">پیام شما ارسال شد!</h3>
+                            <p class="text-gray-600">ممنون از شما. به‌زودی با شما تماس می‌گیریم.</p>
+                            <button id="contact-success-close"
+                                class="mt-6 bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors">
+                                بستن
+                            </button>
+                        </div>
+                        <!-- باکس خطا (اختیاری) -->
+                        <div id="contact-error-box" class="hidden text-center py-6">
+                            <div
+                                class="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="alert-triangle" class="w-10 h-10"></i>
                             </div>
-                            <div class="mb-4">
-                                <label for="message" class="block text-gray-700 font-semibold mb-2">پیام شما</label>
-                                <textarea id="message" name="message" rows="4"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
-                            </div>
-                            <button type="submit"
-                                class="w-full bg-green-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 transition-colors">ارسال
-                                پیام</button>
-                        </form>
+                            <h3 class="text-2xl font-bold mb-2">ارسال ناموفق بود</h3>
+                            <p class="text-gray-600">لطفاً دوباره تلاش کنید یا بعداً مراجعه کنید.</p>
+                            <button id="contact-error-retry"
+                                class="mt-6 bg-green-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-600 transition-colors">
+                                تلاش مجدد
+                            </button>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -343,7 +373,7 @@
                 <!-- Logo and Name -->
                 <div class="lg:col-span-1 mb-6 lg:mb-0">
                     <div class="flex items-center justify-center lg:justify-start space-x-2 space-x-reverse mb-4">
-                        <img src="logo-w.jpg" alt="Avenco Logo" class="h-12 w-12 object-contain"/>
+                        <img src="logo-w.jpg" alt="Avenco Logo" class="h-12 w-12 object-contain" />
                         <h3 class="text-2xl font-bold">آونکو</h3>
                     </div>
                     <p class="text-gray-400">ارتقاء سلامت و نشاط جامعه.</p>
@@ -388,7 +418,8 @@
         <div class="modal-overlay fixed inset-0 bg-black bg-opacity-50"></div>
 
         <!-- Modal Content -->
-        <div class="modal-content bg-white rounded-lg shadow-2xl w-full max-w-lg relative p-6 lg:p-8 text-right scale-80 lg:scale-100">
+        <div
+            class="modal-content bg-white rounded-lg shadow-2xl w-full max-w-lg relative p-6 lg:p-8 text-right scale-80 lg:scale-100">
             <button id="close-reservation-modal-btn" class="absolute top-4 left-4 text-gray-500 hover:text-gray-800">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
@@ -462,8 +493,7 @@
                             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                             placeholder="اگر نکته خاصی وجود دارد اینجا بنویسید..."></textarea>
                     </div>
-                    <button 
-                        type="submit"
+                    <button type="submit"
                         class="w-full bg-green-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 transition-colors mt-2">
                         ثبت درخواست رزرو
                     </button>
@@ -545,180 +575,319 @@
 
 
 <script>
-            // Initialize Lucide icons
-        lucide.createIcons();
+    // Initialize Lucide icons
+    lucide.createIcons();
 
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
 
-        // --- AI Workout Modal Logic ---
-        const workoutModal = document.getElementById('workout-modal');
-        const openModalBtn = document.getElementById('open-modal-btn');
-        const closeModalBtn = document.getElementById('close-modal-btn');
-        const generatePlanBtn = document.getElementById('generate-plan-btn');
-        const loader = document.getElementById('loader');
-        const responseContent = document.getElementById('response-content');
-        const workoutForm = document.getElementById('workout-form');
+    // --- AI Workout Modal Logic ---
+    const workoutModal = document.getElementById('workout-modal');
+    const openModalBtn = document.getElementById('open-modal-btn');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    const generatePlanBtn = document.getElementById('generate-plan-btn');
+    const loader = document.getElementById('loader');
+    const responseContent = document.getElementById('response-content');
+    const workoutForm = document.getElementById('workout-form');
 
-        const openWorkoutModal = () => {
-            workoutModal.classList.remove('modal-hidden');
-            document.body.style.overflow = 'hidden';
-        };
+    const openWorkoutModal = () => {
+        workoutModal.classList.remove('modal-hidden');
+        document.body.style.overflow = 'hidden';
+    };
 
-        const closeWorkoutModal = () => {
-            workoutModal.classList.add('modal-hidden');
-            document.body.style.overflow = '';
-        };
+    const closeWorkoutModal = () => {
+        workoutModal.classList.add('modal-hidden');
+        document.body.style.overflow = '';
+    };
 
-        openModalBtn.addEventListener('click', openWorkoutModal);
-        closeModalBtn.addEventListener('click', closeWorkoutModal);
-        workoutModal.querySelector('.modal-overlay').addEventListener('click', closeWorkoutModal);
+    openModalBtn.addEventListener('click', openWorkoutModal);
+    closeModalBtn.addEventListener('click', closeWorkoutModal);
+    workoutModal.querySelector('.modal-overlay').addEventListener('click', closeWorkoutModal);
 
-        // Gemini API Call
-        generatePlanBtn.addEventListener('click', async () => {
-            const goal = document.getElementById('goal').value;
-            const sport = document.getElementById('sport').value;
-            const level = document.getElementById('level').value;
+    // Gemini API Call
+    generatePlanBtn.addEventListener('click', async () => {
+        const goal = document.getElementById('goal').value;
+        const sport = document.getElementById('sport').value;
+        const level = document.getElementById('level').value;
 
-            responseContent.innerHTML = '';
-            loader.style.display = 'flex';
-            workoutForm.style.display = 'none';
+        responseContent.innerHTML = '';
+        loader.style.display = 'flex';
+        workoutForm.style.display = 'none';
 
-            const systemPrompt = "You are a helpful and creative fitness assistant for Avenco Sports Club. Generate a simple, clear, and safe 3-day workout plan based on the user's preferences. The plan must be in Persian. Structure the response with clear headings for each day (e.g., روز اول, روز دوم), including warm-up, main exercise, and cool-down. Use markdown for formatting lists and bold text. Keep the language encouraging and friendly.";
-            const userQuery = `یک برنامه تمرینی ۳ روزه برای یک فرد ${level} با هدف ${goal} که ورزش مورد علاقه‌اش ${sport} است، ایجاد کن.`;
+        const systemPrompt = "You are a helpful and creative fitness assistant for Avenco Sports Club. Generate a simple, clear, and safe 3-day workout plan based on the user's preferences. The plan must be in Persian. Structure the response with clear headings for each day (e.g., روز اول, روز دوم), including warm-up, main exercise, and cool-down. Use markdown for formatting lists and bold text. Keep the language encouraging and friendly.";
+        const userQuery = `یک برنامه تمرینی ۳ روزه برای یک فرد ${level} با هدف ${goal} که ورزش مورد علاقه‌اش ${sport} است، ایجاد کن.`;
 
-            const apiKey = ""; // API key is handled by the environment
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+        const apiKey = ""; // API key is handled by the environment
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        contents: [{ parts: [{ text: userQuery }] }],
-                        systemInstruction: { parts: [{ text: systemPrompt }] },
-                    })
-                });
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-
-                const result = await response.json();
-                const candidate = result.candidates?.[0];
-
-                if (candidate && candidate.content?.parts?.[0]?.text) {
-                    let text = candidate.content.parts[0].text;
-                    // Basic Markdown to HTML conversion
-                    text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Bold
-                    text = text.replace(/\*(.*?)\*/g, '<em>$1</em>'); // Italics
-                    text = text.replace(/(\n\s*-\s)/g, '</li><li>'); // List items start
-                    text = text.replace(/<li>/, ''); // Remove first bogus li
-                    text = text.replace(/\n/g, '<br>'); // Line breaks
-                    responseContent.innerHTML = `<ul><li>${text}</li></ul>`;
-                } else {
-                    responseContent.textContent = 'متاسفانه پاسخی دریافت نشد. لطفا دوباره تلاش کنید.';
-                }
-            } catch (error) {
-                console.error("Error calling Gemini API:", error);
-                responseContent.textContent = 'خطایی رخ داد. لطفا اتصال اینترنت خود را بررسی کرده و مجددا تلاش کنید.';
-            } finally {
-                loader.style.display = 'none';
-                workoutForm.style.display = 'block'; // Show form again
-            }
-        });
-
-        // --- New Code for Reservation Modal ---
-        const reservationModal = document.getElementById('reservation-modal');
-        const openReservationModalBtns = document.querySelectorAll('.open-reservation-modal-btn');
-        const closeReservationModalBtn = document.getElementById('close-reservation-modal-btn');
-        const modalClubName = document.getElementById('modal-club-name');
-        const reservationForm = document.getElementById('reservation-form');
-        const reservationFormContainer = document.getElementById('reservation-form-container');
-        const reservationSuccessMessage = document.getElementById('reservation-success-message');
-        const closeSuccessModalBtn = document.getElementById('close-success-modal-btn');
-
-        const yearSelect = document.getElementById('res-year');
-        const monthSelect = document.getElementById('res-month');
-        const daySelect = document.getElementById('res-day');
-        const hourSelect = document.getElementById('res-hour');
-        const minuteSelect = document.getElementById('res-minute');
-
-
-        const openReservationModal = (clubName) => {
-            modalClubName.textContent = clubName;
-            reservationForm.reset();
-            reservationFormContainer.style.display = 'block';
-            reservationSuccessMessage.style.display = 'none';
-            reservationModal.classList.remove('modal-hidden');
-            document.body.style.overflow = 'hidden';
-        };
-
-        const closeReservationModal = () => {
-            reservationModal.classList.add('modal-hidden');
-            document.body.style.overflow = '';
-        };
-
-        const populateDates = () => {
-            const currentPersianYear = new Intl.DateTimeFormat('fa-IR-u-nu-latn', { year: 'numeric' }).format(new Date()).replace(/([۰-۹])/g, token => String.fromCharCode(token.charCodeAt(0) - 1728));
-            yearSelect.innerHTML = '';
-            for (let i = 0; i < 2; i++) {
-                const year = parseInt(currentPersianYear) + i;
-                yearSelect.innerHTML += `<option value="${year}">${year}</option>`;
-            }
-
-            const persianMonths = ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"];
-            monthSelect.innerHTML = '';
-            persianMonths.forEach((month, index) => {
-                monthSelect.innerHTML += `<option value="${index + 1}">${month}</option>`;
+        try {
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    contents: [{ parts: [{ text: userQuery }] }],
+                    systemInstruction: { parts: [{ text: systemPrompt }] },
+                })
             });
 
-            daySelect.innerHTML = '';
-            for (let i = 1; i <= 31; i++) {
-                daySelect.innerHTML += `<option value="${i}">${i}</option>`;
-            }
-        };
-
-        const populateTimes = () => {
-            hourSelect.innerHTML = '<option value="" disabled selected>ساعت</option>';
-            // Populate hours (e.g., from 8 AM to 10 PM)
-            for (let i = 8; i <= 22; i++) {
-                const hour = i.toString().padStart(2, '0');
-                hourSelect.innerHTML += `<option value="${hour}">${hour}</option>`;
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
 
-            minuteSelect.innerHTML = '<option value="" disabled selected>دقیقه</option>';
-            // Populate minutes (00, 15, 30, 45)
-            minuteSelect.innerHTML += `<option value="00">00</option>`;
-            minuteSelect.innerHTML += `<option value="15">15</option>`;
-            minuteSelect.innerHTML += `<option value="30">30</option>`;
-            minuteSelect.innerHTML += `<option value="45">45</option>`;
-        };
+            const result = await response.json();
+            const candidate = result.candidates?.[0];
+
+            if (candidate && candidate.content?.parts?.[0]?.text) {
+                let text = candidate.content.parts[0].text;
+                // Basic Markdown to HTML conversion
+                text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Bold
+                text = text.replace(/\*(.*?)\*/g, '<em>$1</em>'); // Italics
+                text = text.replace(/(\n\s*-\s)/g, '</li><li>'); // List items start
+                text = text.replace(/<li>/, ''); // Remove first bogus li
+                text = text.replace(/\n/g, '<br>'); // Line breaks
+                responseContent.innerHTML = `<ul><li>${text}</li></ul>`;
+            } else {
+                responseContent.textContent = 'متاسفانه پاسخی دریافت نشد. لطفا دوباره تلاش کنید.';
+            }
+        } catch (error) {
+            console.error("Error calling Gemini API:", error);
+            responseContent.textContent = 'خطایی رخ داد. لطفا اتصال اینترنت خود را بررسی کرده و مجددا تلاش کنید.';
+        } finally {
+            loader.style.display = 'none';
+            workoutForm.style.display = 'block'; // Show form again
+        }
+    });
+
+    // --- New Code for Reservation Modal ---
+    const reservationModal = document.getElementById('reservation-modal');
+    const openReservationModalBtns = document.querySelectorAll('.open-reservation-modal-btn');
+    const closeReservationModalBtn = document.getElementById('close-reservation-modal-btn');
+    const modalClubName = document.getElementById('modal-club-name');
+    const reservationForm = document.getElementById('reservation-form');
+    const reservationFormContainer = document.getElementById('reservation-form-container');
+    const reservationSuccessMessage = document.getElementById('reservation-success-message');
+    const closeSuccessModalBtn = document.getElementById('close-success-modal-btn');
+
+    const yearSelect = document.getElementById('res-year');
+    const monthSelect = document.getElementById('res-month');
+    const daySelect = document.getElementById('res-day');
+    const hourSelect = document.getElementById('res-hour');
+    const minuteSelect = document.getElementById('res-minute');
 
 
-        openReservationModalBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const clubName = btn.dataset.clubName;
-                openReservationModal(clubName);
-            });
+    const openReservationModal = (clubName) => {
+        modalClubName.textContent = clubName;
+        reservationForm.reset();
+        reservationFormContainer.style.display = 'block';
+        reservationSuccessMessage.style.display = 'none';
+        reservationModal.classList.remove('modal-hidden');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeReservationModal = () => {
+        reservationModal.classList.add('modal-hidden');
+        document.body.style.overflow = '';
+    };
+
+    const populateDates = () => {
+        const currentPersianYear = new Intl.DateTimeFormat('fa-IR-u-nu-latn', { year: 'numeric' }).format(new Date()).replace(/([۰-۹])/g, token => String.fromCharCode(token.charCodeAt(0) - 1728));
+        yearSelect.innerHTML = '';
+        for (let i = 0; i < 2; i++) {
+            const year = parseInt(currentPersianYear) + i;
+            yearSelect.innerHTML += `<option value="${year}">${year}</option>`;
+        }
+
+        const persianMonths = ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"];
+        monthSelect.innerHTML = '';
+        persianMonths.forEach((month, index) => {
+            monthSelect.innerHTML += `<option value="${index + 1}">${month}</option>`;
         });
 
-        closeReservationModalBtn.addEventListener('click', closeReservationModal);
-        reservationModal.querySelector('.modal-overlay').addEventListener('click', closeReservationModal);
-        closeSuccessModalBtn.addEventListener('click', closeReservationModal);
+        daySelect.innerHTML = '';
+        for (let i = 1; i <= 31; i++) {
+            daySelect.innerHTML += `<option value="${i}">${i}</option>`;
+        }
+    };
 
-        reservationForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            reservationFormContainer.style.display = 'none';
-            reservationSuccessMessage.style.display = 'block';
-            lucide.createIcons(); // To render the new 'check' icon
+    const populateTimes = () => {
+        hourSelect.innerHTML = '<option value="" disabled selected>ساعت</option>';
+        // Populate hours (e.g., from 8 AM to 10 PM)
+        for (let i = 8; i <= 22; i++) {
+            const hour = i.toString().padStart(2, '0');
+            hourSelect.innerHTML += `<option value="${hour}">${hour}</option>`;
+        }
+
+        minuteSelect.innerHTML = '<option value="" disabled selected>دقیقه</option>';
+        // Populate minutes (00, 15, 30, 45)
+        minuteSelect.innerHTML += `<option value="00">00</option>`;
+        minuteSelect.innerHTML += `<option value="15">15</option>`;
+        minuteSelect.innerHTML += `<option value="30">30</option>`;
+        minuteSelect.innerHTML += `<option value="45">45</option>`;
+    };
+
+
+    openReservationModalBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const clubName = btn.dataset.clubName;
+            openReservationModal(clubName);
         });
+    });
 
-        populateDates();
-        populateTimes();
+    closeReservationModalBtn.addEventListener('click', closeReservationModal);
+    reservationModal.querySelector('.modal-overlay').addEventListener('click', closeReservationModal);
+    closeSuccessModalBtn.addEventListener('click', closeReservationModal);
+
+    populateDates();
+    populateTimes();
 </script>
+<script>
+    const WEBHOOK_URL = "https://hook.us2.make.com/wu64pgjr3o4xeycor2yjm77vq6ft6j9e";
+
+    async function postToMake(payload) {
+        try {
+            await fetch(WEBHOOK_URL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-Avenco-Secret": "CHANGE_ME_IF_YOU_USE_FILTER"
+                },
+                body: JSON.stringify(payload),
+                mode: "no-cors"
+            });
+            return true;
+        } catch (e) {
+            console.error("Make webhook error:", e);
+            return false;
+        }
+    }
+</script>
+<script>
+  const contactForm = document.getElementById("contact-form");
+  const contactFormContainer = document.getElementById("contact-form-container");
+  const contactSuccessBox = document.getElementById("contact-success-box");
+  const contactErrorBox = document.getElementById("contact-error-box");
+  const contactSuccessClose = document.getElementById("contact-success-close");
+  const contactErrorRetry = document.getElementById("contact-error-retry");
+  const contactSubmitBtn = document.getElementById("contact-submit-btn");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      // دکمه در حالت لود
+      const oldBtnText = contactSubmitBtn.textContent;
+      contactSubmitBtn.disabled = true;
+      contactSubmitBtn.textContent = "در حال ارسال...";
+
+      const name = contactForm.name.value.trim();
+      const email = contactForm.email.value.trim();
+      const message = contactForm.message.value.trim();
+
+      const ok = await postToMake({
+        type: "contact",
+        name,
+        email,
+        message,
+        page: location.href,
+        ts: new Date().toISOString()
+      });
+
+      contactSubmitBtn.disabled = false;
+      contactSubmitBtn.textContent = oldBtnText;
+
+      if (ok) {
+        // نمایش باکس موفقیت مثل رزرو
+        contactFormContainer.style.display = "none";
+        contactSuccessBox.style.display = "block";
+        if (window.lucide && window.lucide.createIcons) lucide.createIcons();
+        contactForm.reset();
+      } else {
+        // نمایش باکس خطا
+        contactFormContainer.style.display = "none";
+        contactErrorBox.style.display = "block";
+        if (window.lucide && window.lucide.createIcons) lucide.createIcons();
+      }
+    });
+
+    // بستن باکس موفقیت و برگرداندن فرم
+    contactSuccessClose?.addEventListener("click", () => {
+      contactSuccessBox.style.display = "none";
+      contactFormContainer.style.display = "block";
+    });
+
+    // تلاش مجدد در حالت خطا
+    contactErrorRetry?.addEventListener("click", () => {
+      contactErrorBox.style.display = "none";
+      contactFormContainer.style.display = "block";
+    });
+  }
+</script>
+<script>
+    // کمک‌تابع برای ساخت یک رشته تاریخ خوانا/تقریباً ISO (اگر لازم داری)
+    function buildISODate(y, m, d, hh, mm) {
+        const yyyy = String(y).padStart(4, '0');
+        const MM = String(m).padStart(2, '0');
+        const DD = String(d).padStart(2, '0');
+        const HH = String(hh).padStart(2, '0');
+        const Min = String(mm).padStart(2, '0');
+        return `${yyyy}-${MM}-${DD}T${HH}:${Min}:00`;
+    }
+
+    reservationForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // فیلدها را بخوان
+        const persianMonths = ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"];
+        const name = document.getElementById('res-name').value.trim();
+        const phone = document.getElementById('res-phone').value.trim();
+        const people = document.getElementById('res-people').value;
+        const year = document.getElementById('res-year').value;
+        const month = document.getElementById('res-month').value;
+        const monthName = persianMonths[month - 1];
+        const day = document.getElementById('res-day').value;
+        const hour = document.getElementById('res-hour').value;
+        const minute = document.getElementById('res-minute').value;
+        const notes = document.getElementById('res-notes').value.trim();    
+        const club = document.getElementById('modal-club-name').textContent;
+
+        // payload مخصوص Make
+        const payload = {
+            type: "reservation",
+            club,
+            name,
+            phone,
+            people: Number(people),
+            date: `${year}-${monthName}-${day}`,
+            time: `${hour}:${minute}`,
+            notes,
+            page: location.href,
+            timestamp: new Date().toISOString()
+        };
+
+        // UI: نشان دادن موفقیت/لودینگ
+        reservationFormContainer.style.display = 'none';
+        reservationSuccessMessage.style.display = 'block';
+        lucide.createIcons(); // رندر آیکن تیک
+
+        // ارسال به Make
+        const ok = await postToMake(payload);
+
+        if (!ok) {
+            // برگشت به فرم اگر خطا بود
+            reservationSuccessMessage.style.display = 'none';
+            reservationFormContainer.style.display = 'block';
+            alert("ثبت رزرو ناموفق بود. لطفاً دوباره تلاش کنید.");
+            return;
+        }
+
+        // پاک‌سازی فرم
+        reservationForm.reset();
+    });
+</script>
+
+
 </html>
