@@ -80,28 +80,38 @@
         /* BRAND COLOR OVERRIDES */
         :root {
             --brand: #4A7BFF;
+            --brand-darker10: #3A6BE6;
             --brand-light: #E8F0FF;
         }
 
-        .text-green-600,
+        .text-green-600 {
+            color: var(--brand-darker10) !important;
+        }
+
         .text-green-500 {
             color: var(--brand) !important;
         }
 
-        .bg-green-500,
-        .bg-green-600 {
+        .bg-green-500 {
             background-color: var(--brand) !important;
         }
 
+        .bg-green-600 {
+            background-color: var(--brand-darker10) !important;
+        }
+
         .hover\:bg-green-600:hover {
-            background-color: var(--brand) !important;
+            background-color: var(--brand-darker10) !important;
         }
 
         .border-green-500 {
             border-color: var(--brand) !important;
         }
 
-        svg.text-green-600,
+        svg.text-green-600 {
+            color: var(--brand-darker10) !important;
+        }
+
         svg.text-green-500 {
             color: var(--brand) !important;
         }
@@ -202,8 +212,9 @@
                             <h3 class="text-xl font-semibold mb-2">باشگاه والیبال سالنی قوچان</h3>
                             <p class="text-gray-600 mb-4 flex-grow">فضایی پویا برای علاقه‌مندان به والیبال در تمام سطوح.
                             </p>
-                            <button data-club-name="باشگاه والیبال سالنی قوچان"
-                                class="open-reservation-modal-btn w-full mt-auto bg-green-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-600 transition-colors"
+                            <button 
+                                data-club-name="باشگاه والیبال سالنی قوچان"
+                                class="open-reservation-modal-btn w-full mt-auto text-white font-semibold py-2 px-4 rounded-lg transition-colors bg-gray-500/40"
                                 disabled="disabled" readonly="readonly">رزرو سانس</button>
                         </div>
                     </div>
@@ -218,9 +229,10 @@
                             <h3 class="text-xl font-semibold mb-2">باشگاه فوتبال سالنی قوچان</h3>
                             <p class="text-gray-600 mb-4 flex-grow">زمین‌های استاندارد، مربیان مجرب، تجربه‌ای
                                 هیجان‌انگیز.</p>
-                            <button data-club-name="باشگاه فوتبال سالنی قوچان"
-                                class="open-reservation-modal-btn w-full mt-auto bg-green-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-600 transition-colors">رزرو
-                                سانس</button>
+                            <button 
+                                data-club-name="باشگاه فوتبال سالنی قوچان"
+                                class="open-reservation-modal-btn w-full mt-auto text-white font-semibold py-2 px-4 rounded-lg transition-colors bg-gray-500/40"
+                                disabled="disabled" readonly="readonly">رزرو سانس</button>                                
                         </div>
                     </div>
                 </div>
@@ -359,7 +371,7 @@
                 </div>
             </div>
             <div class="mt-12 border-t border-gray-700 pt-6 text-center text-gray-400">
-                <span>&copy; باشگاه فرهنگی ورزشی آونکو - کلیه حقوق محفوظ است. - ۱۴۰۳-۱۴۰۴ - نسخه ۲۵.۰.۱۸</span>
+                <span>&copy; باشگاه فرهنگی ورزشی آونکو - کلیه حقوق محفوظ است. - ۱۴۰۳-۱۴۰۴ - نسخه ۲۵.۰.۲۱</span>
             </div>
         </div>
     </footer>
