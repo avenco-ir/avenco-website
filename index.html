@@ -4,6 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Avenco" />
+    <link rel="manifest" href="/site.webmanifest" />
     <title>باشگاه فرهنگی ورزشی آونکو</title>
 
     <!-- Tailwind CSS CDN -->
@@ -16,9 +22,8 @@
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    
-    <!-- Reservation Modal Defaults -->
-    <script src="reservation-defaults.js"></script>
+
+    <script src="./reservation-defaults.js"></script>
 
     <style>
         body {
@@ -338,10 +343,7 @@
                 <!-- Logo and Name -->
                 <div class="lg:col-span-1 mb-6 lg:mb-0">
                     <div class="flex items-center justify-center lg:justify-start space-x-2 space-x-reverse mb-4">
-                        <svg class="h-8 w-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                        </svg>
+                        <img src="logo-w.jpg" alt="Avenco Logo" class="h-12 w-12 object-contain"/>
                         <h3 class="text-2xl font-bold">آونکو</h3>
                     </div>
                     <p class="text-gray-400">ارتقاء سلامت و نشاط جامعه.</p>
@@ -539,10 +541,11 @@
             </div>
         </div>
     </div>
+</body>
 
 
-    <script>
-        // Initialize Lucide icons
+<script>
+            // Initialize Lucide icons
         lucide.createIcons();
 
         // Mobile menu toggle
@@ -717,10 +720,5 @@
 
         populateDates();
         populateTimes();
-
-
-    </script>
-
-</body>
-
+</script>
 </html>
