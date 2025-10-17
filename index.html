@@ -236,7 +236,8 @@
                         نمی‌دانید از کجا شروع کنید؟ به کمک هوش مصنوعی Gemini، یک برنامه تمرینی شخصی‌سازی‌شده بر اساس
                         اهداف و علاقه خود دریافت کنید و اولین قدم را برای رسیدن به تناسب اندام بردارید.
                     </p>
-                    <button id="open-modal-btn"
+                    <button 
+                    id="open-modal-btn"
                         class="bg-green-500 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-green-600 transition-transform transform hover:scale-105 inline-flex items-center">
                         ✨ ساخت برنامه تمرینی شخصی
                     </button>
@@ -358,7 +359,7 @@
                 </div>
             </div>
             <div class="mt-12 border-t border-gray-700 pt-6 text-center text-gray-400">
-                <p>&copy; باشگاه فرهنگی ورزشی آونکو - کلیه حقوق محفوظ است. - ۱۴۰۳-۱۴۰۴</p>
+                <span>&copy; باشگاه فرهنگی ورزشی آونکو - کلیه حقوق محفوظ است. - ۱۴۰۳-۱۴۰۴ - نسخه ۲۵.۰.۱۸</span>
             </div>
         </div>
     </footer>
@@ -369,7 +370,7 @@
         <div class="modal-overlay fixed inset-0 bg-black bg-opacity-50"></div>
 
         <!-- Modal Content -->
-        <div class="modal-content bg-white rounded-lg shadow-2xl w-full max-w-lg relative p-6 lg:p-8 text-right scale-75">
+        <div class="modal-content bg-white rounded-lg shadow-2xl w-full max-w-lg relative p-6 lg:p-8 text-right scale-80">
             <button id="close-reservation-modal-btn" class="absolute top-4 left-4 text-gray-500 hover:text-gray-800">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
@@ -379,7 +380,7 @@
                 <p class="text-gray-600 mb-6">برای <strong id="modal-club-name"></strong></p>
 
                 <form id="reservation-form">
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+                    <div class="grid grid-cols-3 gap-4 mb-4">
                         <div>
                             <label for="res-name" class="block text-gray-700 font-semibold mb-2">نام و نام
                                 خانوادگی</label>
@@ -409,7 +410,7 @@
                         </div>
                     </div>
                     <label class="block text-gray-700 font-semibold mb-2">تاریخ رزرو</label>
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+                    <div class="grid grid-cols-3 gap-4 mb-4">
                         <div>
                             <select id="res-year" name="year"
                                 class="w-full p-2 border border-gray-300 rounded-lg bg-white" required></select>
@@ -424,7 +425,7 @@
                         </div>
                     </div>
                     <label class="block text-gray-700 font-semibold mb-2">ساعت رزرو</label>
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+                    <div class="grid grid-cols-2 gap-4 mb-4">
                         <div>
                             <select id="res-hour" name="hour"
                                 class="w-full p-2 border border-gray-300 rounded-lg bg-white" required>
