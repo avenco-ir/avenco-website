@@ -208,9 +208,9 @@
                             <h3 class="text-xl font-semibold mb-2">استخر کارگران اسفراین</h3>
                             <p class="text-gray-600 mb-4 flex-grow">آب‌های زلال، محیطی آرام، برای شنا و آب‌درمانی.</p>
                             <button 
-                                data-club-name="استخر کارگران اسفراین"
+                                data-club-name="استخر کارگران اسفراین" 
                                 class="open-reservation-modal-btn w-full mt-auto bg-green-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-600 transition-colors">
-                                رزرو سانس</button>
+                                رزرو سانس خصوصی</button>
                         </div>
                     </div>
 
@@ -228,7 +228,7 @@
                                 فوتسال، والیبال، هندبال، بدمینتون و اسکیت
                             </p>
                             <button 
-                                data-club-name="باشگاه چند منظوره سیمرغ قوچان"
+                                data-club-name="باشگاه چند منظوره سیمرغ قوچان" 
                                 class="open-reservation-modal-btn w-full mt-auto bg-green-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-600 transition-colors"
                             >رزرو سانس</button>
                         </div>
@@ -248,7 +248,7 @@
                                 فوتسال، والیبال، هندبال، بدمینتون و اسکیت
                             </p>
                             <button 
-                                data-club-name="باشگاه چند منظوره حجاب قوچان"
+                                data-club-name="باشگاه چند منظوره حجاب قوچان" 
                                 class="open-reservation-modal-btn w-full mt-auto text-white font-semibold py-2 px-4 rounded-lg transition-colors bg-gray-500/40"
                                 disabled="disabled" readonly="readonly"
                             >رزرو سانس</button>
@@ -432,7 +432,7 @@
                 </div>
             </div>
             <div class="mt-12 border-t border-gray-700 pt-6 text-center text-gray-400">
-                <span>&copy; باشگاه فرهنگی ورزشی آونکو - کلیه حقوق محفوظ است. - ۱۴۰۳-۱۴۰۴ - نسخه ۲۵.۱.۲۴</span>
+                <span>&copy; باشگاه فرهنگی ورزشی آونکو - کلیه حقوق محفوظ است. - ۱۴۰۳-۱۴۰۴ - نسخه ۲۵.۱.۲۵</span>
             </div>
         </div>
     </footer>
@@ -450,7 +450,7 @@
             </button>
 
             <div id="reservation-form-container">
-                <h2 class="text-2xl font-bold mb-2">رزرو سانس</h2>
+                <h2 class="text-2xl font-bold mb-2">رزرو سانس<span id="modal-club-type"></span></h2>
                 <p class="text-gray-600 mb-6">برای <strong id="modal-club-name"></strong></p>
 
                 <form id="reservation-form">
@@ -692,6 +692,7 @@
     const openReservationModalBtns = document.querySelectorAll('.open-reservation-modal-btn');
     const closeReservationModalBtn = document.getElementById('close-reservation-modal-btn');
     const modalClubName = document.getElementById('modal-club-name');
+    const modalClubType = document.getElementById('modal-club-type');
     const reservationForm = document.getElementById('reservation-form');
     const reservationFormContainer = document.getElementById('reservation-form-container');
     const reservationSuccessMessage = document.getElementById('reservation-success-message');
@@ -706,6 +707,7 @@
 
     const openReservationModal = (clubName) => {
         modalClubName.textContent = clubName;
+        modalClubType.textContent = clubName.includes("استخر") ? " خصوصی" : "";
         reservationForm.reset();
         reservationFormContainer.style.display = 'block';
         reservationSuccessMessage.style.display = 'none';
